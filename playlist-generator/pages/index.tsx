@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
-      <h1>Enter Youtube/Spotify/Apple Music playlist URL</h1>
+      <h1>Enter Youtube/Spotify/Apple Music playlist URL!</h1>
       <label>URL</label>
       <input type="text" id="fname" name="fname" size={80}/>
         <br/>
