@@ -8,19 +8,23 @@ import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   return (
+    
     <div className={styles.container}>
       <h1>Enter Youtube/Spotify/Apple Music playlist URL!</h1>
-      <form onSubmit= {() =>  {let url = document.querySelector('#url').value
-        if (!url) {
-          alert('Please enter your name.')
-          return ""
-        }
+      <form onSubmit= {(e: React.FormEvent<HTMLFormElement>) =>  {
+        e.preventDefault()
 
+        let url = document.querySelector('#url').value
+        if(!url){
+          alert("please enter valid URL")
+        }
+        else{
+          alert("URL: " + url)
+        }
         
-        alert('URLLLLLLLLLLL: ' + url)
-        console.log("URLLLLLLLLLLL: " + url)
-        return url}
-      }>
+
+      }}>
+
       <div>
         <label htmlFor="url">  URL</label>
         <input type="text" id="url" name="url" size={80}/>
@@ -29,9 +33,9 @@ const Home: NextPage = () => {
         <button type="submit">Submit</button> 
       </div>
       </form>
-      <script></script>
-    
+   
     </div>
+  
   
   )
 }
